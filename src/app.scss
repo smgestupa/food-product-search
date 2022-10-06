@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Inter";
-  src: url("/assets/font/Raleway.ttf");
+  src: url("/assets/fonts/Inter.ttf");
 }
 
 html,
@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: "Inter";
 }
 
 
