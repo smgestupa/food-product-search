@@ -16,8 +16,8 @@
     "checkJs": true,
     "isolatedModules": true,
     "paths": {
-      "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
+      "@lib/*": ["./src/lib/*"],
       "@routes/*": ["./src/routes/*"],
       "@semantics/*": ["./src/semantics/*"]
     }
