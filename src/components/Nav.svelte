@@ -47,7 +47,6 @@
             }
 
             & > h1 {
-                color: white;
                 font-size: 1.25rem; /* 20px */
                 line-height: 1.75rem; /* 28px */
             }
