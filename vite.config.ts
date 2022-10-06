@@ -6,6 +6,14 @@ import { resolve } from "path";
 export default defineConfig({
   plugins: [svelte()],
 
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "src/variables.scss" as *;',
+      },
+    },
+  },
+
   resolve: {
     alias: {
       "@components": resolve(__dirname, "./src/components"),
