@@ -57,9 +57,5 @@
         & > svg, input {
             cursor: no-drop;
         }
-
-        & > input {
-            color: #9AA0A6;
-        }
     }
 </style>
