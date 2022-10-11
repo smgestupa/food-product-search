@@ -153,12 +153,12 @@
                     <li>
                         Substances or products causing allergies or intolerances 
                         { #if product.allergens }
+                            <span>{ product.allergens }</span>
+                        { :else }
                             <span class="missing-value">
                                 <Missing width="24" height="24"/> 
                                 Missing substances/products
                             </span>
-                        { :else }
-                            <span>{ product.allergens }</span>
                         { /if }
                     </li>
                 </ul>
