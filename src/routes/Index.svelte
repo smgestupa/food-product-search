@@ -172,6 +172,7 @@
         justify-content: center;
         width: 100%;
         margin-top: 50px;
+        padding: 0 10px;
     }
 
     #search-buttons {
@@ -205,7 +206,7 @@
         flex-grow: 1;
         width: 100%;
         height: 100%;
-        padding: 4rem 0; 
+        padding: 4rem 10px; 
     }
 
     #results-loading {
