@@ -132,88 +132,86 @@
                 </li>
             </ul>
         </div>
-        <div class="splitter">
-            <div class="product-ingredients">
-                <header>
-                    <h1>Ingredients</h1>
-                    <h2>Ingredients are listed in order of importance</h2>
-                </header>
-                <ul>
-                    <li>
-                        Ingredients list 
-                        { #if product.ingredients }
-                            <span>{ product.ingredients }</span>
-                        { :else }
-                            <span class="missing-value">
-                                <Missing width="24" height="24"/> 
-                                Missing ingredients
-                            </span>
-                        { /if }
-                    </li>
-                    <li>
-                        Substances or products causing allergies or intolerances 
-                        { #if product.allergens }
-                            <span>{ product.allergens }</span>
-                        { :else }
-                            <span class="missing-value">
-                                <Missing width="24" height="24"/> 
-                                Missing substances/products
-                            </span>
-                        { /if }
-                    </li>
-                </ul>
-            </div>
-            <div class="nutrition-facts">
-                <header>
-                    <h1>Nutrition Facts</h1>
-                </header>
-                <ul>
-                    <li class="nutriscore">
-                        <span>NutriScore color nutrition grade</span>
-                        <section>
-                            <span class:score={ product.grade === "a" }>A</span>
-                            <span class:score={ product.grade === "b" }>B</span>
-                            <span class:score={ product.grade === "c" }>C</span>
-                            <span class:score={ product.grade === "d" }>D</span>
-                            <span class:score={ product.grade === "e" }>E</span>
-                        </section>
-                    </li>
-                    <li class="nutrient-levels">
-                        <span>Nutrient levels for 100g</span>
-                        <section>
-                            <p 
-                            class:high={ product.fat === "high" }
-                            class:moderate={ product.fat === "moderate" }
-                            class:low={ product.fat === "low" }>
-                                <Ellipse/>
-                                <span>Fat</span> 
-                                    in { product.fat ? product.fat : "unknown" } quantity
-                            </p>
-                            <p 
-                            class:high={ product.saturated === "high" }
-                            class:moderate={ product.saturated === "moderate" }
-                            class:low={ product.saturated === "low" }>
-                                <Ellipse/>
-                                <span>Saturated Fat</span> in { product.saturated ? product.saturated : "unknown" } quantity
-                            </p>
-                            <p 
-                            class:high={ product.sugars === "high" }
-                            class:moderate={ product.sugars === "moderate" }
-                            class:low={ product.sugars === "low" }>
-                                <Ellipse/>
-                                <span>Sugars</span> in { product.sugars ? product.sugars : "unknown" } quantity
-                            </p>
-                            <p 
-                            class:high={ product.salt === "high" }
-                            class:moderate={ product.salt === "moderate" }
-                            class:low={ product.salt === "low" }>
-                                <Ellipse/>
-                                <span>Salt</span> in { product.salt ? product.salt : "unknown" } quantity
-                            </p>
-                        </section>
-                    </li>
-                </ul>
-            </div>
+        <div class="product-ingredients">
+            <header>
+                <h1>Ingredients</h1>
+                <h2>Ingredients are listed in order of importance</h2>
+            </header>
+            <ul>
+                <li>
+                    Ingredients list 
+                    { #if product.ingredients }
+                        <span>{ product.ingredients }</span>
+                    { :else }
+                        <span class="missing-value">
+                            <Missing width="24" height="24"/> 
+                            Missing ingredients
+                        </span>
+                    { /if }
+                </li>
+                <li>
+                    Substances or products causing allergies or intolerances 
+                    { #if product.allergens }
+                        <span>{ product.allergens }</span>
+                    { :else }
+                        <span class="missing-value">
+                            <Missing width="24" height="24"/> 
+                            Missing substances/products
+                        </span>
+                    { /if }
+                </li>
+            </ul>
+        </div>
+        <div class="nutrition-facts">
+            <header>
+                <h1>Nutrition Facts</h1>
+            </header>
+            <ul>
+                <li class="nutriscore">
+                    <span>NutriScore color nutrition grade</span>
+                    <section>
+                        <span class:score={ product.grade === "a" }>A</span>
+                        <span class:score={ product.grade === "b" }>B</span>
+                        <span class:score={ product.grade === "c" }>C</span>
+                        <span class:score={ product.grade === "d" }>D</span>
+                        <span class:score={ product.grade === "e" }>E</span>
+                    </section>
+                </li>
+                <li class="nutrient-levels">
+                    <span>Nutrient levels for 100g</span>
+                    <section>
+                        <p 
+                        class:high={ product.fat === "high" }
+                        class:moderate={ product.fat === "moderate" }
+                        class:low={ product.fat === "low" }>
+                            <Ellipse/>
+                            <span>Fat</span> 
+                                in { product.fat ? product.fat : "unknown" } quantity
+                        </p>
+                        <p 
+                        class:high={ product.saturated === "high" }
+                        class:moderate={ product.saturated === "moderate" }
+                        class:low={ product.saturated === "low" }>
+                            <Ellipse/>
+                            <span>Saturated Fat</span> in { product.saturated ? product.saturated : "unknown" } quantity
+                        </p>
+                        <p 
+                        class:high={ product.sugars === "high" }
+                        class:moderate={ product.sugars === "moderate" }
+                        class:low={ product.sugars === "low" }>
+                            <Ellipse/>
+                            <span>Sugars</span> in { product.sugars ? product.sugars : "unknown" } quantity
+                        </p>
+                        <p 
+                        class:high={ product.salt === "high" }
+                        class:moderate={ product.salt === "moderate" }
+                        class:low={ product.salt === "low" }>
+                            <Ellipse/>
+                            <span>Salt</span> in { product.salt ? product.salt : "unknown" } quantity
+                        </p>
+                    </section>
+                </li>
+            </ul>
         </div>
     </section>
 </details>
@@ -297,7 +295,8 @@
 
         & > section {
             margin-top: 9px;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
             max-width: 720px;
             height: fit-content;
             padding: 5px;
@@ -306,8 +305,25 @@
             border-radius: 4px;
             color: black;
 
-            & > div.splitter {
-                width: 50%;
+            & > div:nth-child(1) {
+                grid-row: span 2 / span 2;
+            }
+
+            @media (max-width: 720px) {
+                & > div:nth-child(1) {
+                    grid-row: span 1 / span 1;
+                }
+            }
+
+            @media (max-width: 480px) {
+                & > div:nth-child(1) {
+                    grid-column: span 2 / span 2;
+                }
+
+                & > div:nth-child(2) {
+                    grid-column: span 2 / span 2;
+                    margin-top: 24px;
+                }
             }
         }
 
@@ -322,8 +338,6 @@
     }
 
     .product-characteristics {
-        width: 50%;
-
         & > header > h1 {
             font-size: 1.125rem; /* 18px */
             line-height: 1.75rem; /* 28px */
@@ -417,7 +431,7 @@
     }
 
     .nutrition-facts {
-        margin-top: 32px;
+        margin-top: 24px;
 
         & > header > h1 {
             font-size: 1.125rem; /* 18px */
@@ -451,6 +465,7 @@
         & > section {
             display: flex;
             align-items: center;
+            justify-content: center;
             margin-top: 16px;
         }
 
