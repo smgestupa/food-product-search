@@ -2,7 +2,7 @@ export type Product = {
     code: string,
     image: string | undefined,
     name: string,
-    quantity: string | undefined | null,
+    quantity: string | undefined,
     brands: string | undefined,
     packaging: string | undefined,
     categories: string | undefined,
