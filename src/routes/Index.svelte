@@ -38,7 +38,7 @@
             else p.serving_quantity;
 
             const _brands: string | undefined = 
-                p.brands instanceof Array<String> 
+                Array.isArray(p.brands) 
                 ? p.brands.join(", ")
                 : p.brands;
 
