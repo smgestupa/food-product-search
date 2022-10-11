@@ -8,9 +8,9 @@
 <details>
     <summary>
         { #if product.image }
-            <img src={ product.image } alt="Product Front">
+            <img src={ product.image } alt={ product.name }>
         { :else }
-            <img src="/assets/images/no_image.png" alt="No Product">
+            <img src="/assets/images/no_image.png" alt={ product.name }>
         { /if }
         <div>
             <header>
