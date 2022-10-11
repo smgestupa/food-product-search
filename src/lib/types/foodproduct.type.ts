@@ -1,4 +1,4 @@
-export type Product = {
+export interface FoodProduct {
     code: string,
     image: string | undefined,
     name: string,
