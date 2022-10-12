@@ -136,6 +136,7 @@
         justify-content: center;
         text-align: center;
         margin-top: 102px;
+        padding: 0 1rem;
 
         & > header {
             display: flex;
@@ -162,6 +163,31 @@
 
                 &:hover {
                     color: #50b695;
+                }
+            }
+
+            @media (max-width: 720px) {
+                & > h1 {
+                    font-size: 2.25rem; /* 36px */
+                    line-height: 2.5rem; /* 40px */
+                }
+
+                & > h2 {
+                    font-size: 1.125rem; /* 18px */
+                    line-height: 1.75rem; /* 28px */
+                }
+            }
+
+            @media (max-width: 480px) {
+                & > h1 {
+                    font-size: 1.875rem; /* 30px */
+                    line-height: 2.25rem; /* 36px */
+                }
+
+                & > h2 {
+                    margin-top: 9px;
+                    font-size: 1rem; /* 16px */
+                    line-height: 1.5rem; /* 24px */
                 }
             }
         }
