@@ -2,7 +2,7 @@
 
 Search food products with this generic search website, using [OpenFoodFacts](https://world.openfoodfacts.org) API.
 
-This is a recreation of the first website I've built, which is horribly called as the [Unnamed Food Data Search](https://unnamed-food-data-search.netlify.app), which was built using an earlier version of SvelteKit.
+This is a recreation of the first website I've built, which is horribly called as the [Unnamed Food Data Search](https://unnamed-food-data-search.netlify.app) and was built using an earlier version of SvelteKit.
 
 
 ## [Live Demo](https://food-product-search.vercel.app/)
