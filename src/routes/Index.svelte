@@ -32,10 +32,10 @@
 
     const extractData = (data: any[]) => {
         data.forEach(p => {
-            let _quantity: string | undefined;
-            if (p.quantity && /([\d]+)/.test(p.quantity)) 
-                _quantity = p.quantity.match(/([\d]+)/)[0];
-            else p.serving_quantity;
+            const _quantity: string | undefined =
+                p.quantity && /([\d]+)/.test(p.quantity)
+                ? p.quantity.match(/([\d]+)/)[0]
+                : p.serving_quantity;
 
             const _brands: string | undefined = 
                 Array.isArray(p.brands) 
