@@ -15,7 +15,8 @@
         <div>
             <header>
                 <a href="https://world.openfoodfacts.org/product/{ product.code }"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
                     { product.name }
                 </a>
                 <h2>
@@ -98,7 +99,8 @@
                     Product page of the official site of the producer 
                     { #if product.link }
                         <a href={ product.link } 
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener noreferrer">
                             { product.link }
                         </a>
                     { :else }
