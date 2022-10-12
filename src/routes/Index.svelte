@@ -4,6 +4,7 @@
     import ProductSearch from "@components/ProductSearch.svelte";
     import ProductPreview from "@components/ProductPreview.svelte";
     import type { FoodProduct } from "@lib/types/foodproduct.type";
+    import { searchByProduct, searchByEAN } from "@lib/api/openfoodfacts";
     import food from "@lib/lists/food.json";
     let productTerm: string = "",
         term: string = "", 
@@ -12,7 +13,7 @@
         loading: boolean = false,
         disableInput: boolean = false;
 
-    const searchProduct = async () => {
+    const search = async () => {
         if (!productTerm.trim() || productTerm.trim() === term) return;
         if (firstTime) firstTime = false;
         
@@ -21,11 +22,13 @@
         loading = true;
         disableInput = true;
 
-        const req = await fetch(`https://world.openfoodfacts.org/cgi/search.pl?search_terms=${ term }&search_simple=1&json=1`);
-        const res = await req.json();
+        const response = 
+            /^[0-9]{13}$/.test(term)
+            ? await searchByEAN(term)
+            : await searchByProduct(term);
 
-        if (req.status === 200 && res.page_count !== 0) 
-            extractData(res.products);
+        if (response.status !== 200) console.error("Something went wrong with fetching data!");
+        else if (response.size) extractData(response.list);
         loading = false;
         disableInput = false;
     }
@@ -72,7 +75,7 @@
 
     const randomProduct = () => {
         productTerm = food[Math.floor(Math.random() * 189)];
-        searchProduct();
+        search();
     }
 </script>
 
@@ -85,7 +88,7 @@
         <ProductSearch bind:productTerm bind:disableInput/>
     </div>
     <div id="search-buttons">
-        <button on:click={ searchProduct }>Search</button>
+        <button on:click={ search }>Search</button>
         <button on:click={ randomProduct }>Random product</button>
     </div>
 </section>
