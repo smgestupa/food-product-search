@@ -45,10 +45,7 @@
                 ? p.brands.join(", ")
                 : p.brands;
 
-            let _ingredients: string[] | undefined = [];
-            p.ingredients?.forEach(i => _ingredients = [..._ingredients, i.text]);
-
-            const product: FoodProduct = {
+            products.push({
                 code: p._id || p.code,
                 image: p.image_front_url,
                 name: p.name || p.product_name,
@@ -60,16 +57,14 @@
                 link: p.link,
                 stores: p.stores?.replace(/([,](\s+)?)/, ", "),
                 countries: p.countries?.replace(/([,](\s+)?)/, ", "),
-                ingredients: _ingredients.join(", "),
+                ingredients: p.ingredients?.map(v => v.text).join(", "),
                 allergens: p.allergens || p.ingredients_text_with_allergens,
                 grade: p.ecoscore_grade,
                 fat: p.nutrient_levels?.fat,
                 salt: p.nutrient_levels?.salt,
                 saturated: p.nutrient_levels?.saturated,
                 sugars: p.nutrient_levels?.sugars,
-            };
-
-            products.push(product);
+            });
         });
     }
 
