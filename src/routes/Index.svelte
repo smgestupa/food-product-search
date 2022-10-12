@@ -45,7 +45,7 @@
                 ? p.brands.join(", ")
                 : p.brands;
 
-            const product: FoodProduct = {
+            products.push({
                 code: p._id || p.code,
                 image: p.image_front_url,
                 name: p.name || p.product_name,
@@ -64,9 +64,7 @@
                 salt: p.nutrient_levels?.salt,
                 saturated: p.nutrient_levels?.saturated,
                 sugars: p.nutrient_levels?.sugars,
-            };
-
-            products.push(product);
+            });
         });
     }
 
