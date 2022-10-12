@@ -253,7 +253,8 @@
 
                 & > header > a {
                     display: block;
-                    width: fit-content;
+                    width: 100%;
+                    max-width: fit-content;
                     margin-bottom: 6.5px;
                     overflow: hidden;
                     text-overflow: ellipsis;
