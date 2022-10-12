@@ -299,17 +299,18 @@
         & > section {
             margin-top: 9px;
             display: grid;
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(2, minmax(0, auto));
             max-width: 720px;
             height: fit-content;
             padding: 5px;
             background-color: white;
             border: 2px solid #DFE1E5;
             border-radius: 4px;
+            overflow-wrap: break-word;
             color: black;
 
             & > div:nth-child(1) {
-                grid-row: span 2 / span 2;
+                grid-row: span 3 / span 3;
             }
 
             @media (max-width: 720px) {
