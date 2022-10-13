@@ -52,6 +52,20 @@
                 font-size: 1.25rem; /* 20px */
                 line-height: 1.75rem; /* 28px */
             }
+
+            @media (max-width: 720px) {
+                & > h1 {
+                    font-size: 1.125rem; /* 18px */
+                    line-height: 1.75rem; /* 28px */
+                }
+            }
+
+            @media (max-width: 480px) {
+                & > h1 {
+                    font-size: 1rem; /* 16px */
+                    line-height: 1.5rem; /* 24px */
+                }
+            }
         }
     }
 
