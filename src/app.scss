@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter.ttf");
+  font-display: swap;
+  src: url("/assets/fonts/Inter.ttf") format("truetype");
 }
 
 html,
@@ -13,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Inter", Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   color: white;
   background-color: #1F2937;
 }
