@@ -15,6 +15,7 @@
             <h1 href="/">Food Product Search</h1>
         </a>
         <a id="github-icon"
+        aria-label="GitHub"
         href="https://github.com/laazyCmd/food-product-search"
         target="_blank"
         rel="noopener noreferrer">
