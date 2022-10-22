@@ -14,11 +14,12 @@
         disableInput: boolean = false;
 
     const search = async () => {
-        if (!productTerm.trim() || productTerm.trim() === term) return;
+        productTerm = productTerm.trim();
+        if (!productTerm || productTerm === term) return;
         if (firstTime) firstTime = false;
         
         products = [];
-        term = productTerm.trim();
+        term = productTerm;
         loading = true;
         disableInput = true;
 
