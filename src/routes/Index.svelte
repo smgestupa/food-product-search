@@ -78,7 +78,7 @@
 <section id="search">
     <header>
         <h1>Search food products with this generic search website.</h1>
-        <h2>Huge thanks to <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener noreferrer">OpenFoodFacts</a> for their API</h2>
+        <h2>Huge thanks to <a href="https://world.openfoodfacts.org/" target="_blank" rel="noreferrer">OpenFoodFacts</a> for their API</h2>
     </header>
     <div id="search-box">
         <ProductSearch bind:productTerm bind:disableInput/>

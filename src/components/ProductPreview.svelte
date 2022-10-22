@@ -16,7 +16,7 @@
             <header>
                 <a href="https://world.openfoodfacts.org/product/{ product.code }"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noreferrer">
                     { product.name }
                 </a>
                 <h2>
@@ -100,7 +100,7 @@
                     { #if product.link }
                         <a href={ product.link } 
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noreferrer">
                             { product.link }
                         </a>
                     { :else }
