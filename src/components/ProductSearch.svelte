@@ -49,13 +49,13 @@
                 stroke: #059669;
             }
         }
-    }
-    
-    .disabled {
-        cursor: no-drop;
 
-        & > svg, input {
+        &.disabled {
             cursor: no-drop;
+
+            & > svg, input {
+                cursor: no-drop;
+            }
         }
     }
 </style>
