@@ -1,5 +1,5 @@
 <footer>
-    <p>If you liked this, check out the <a href="https://nwahs.vercel.app/#projects" target="_blank" rel="noopener noreferrer">others I've also made</a>.</p>
+    <p>If you liked this, check out the <a href="https://nwahs.vercel.app/#projects" target="_blank" rel="noreferrer">others I've also made</a>.</p>
 </footer>
 
 <style lang="scss">

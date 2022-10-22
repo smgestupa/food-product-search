@@ -14,11 +14,12 @@
         disableInput: boolean = false;
 
     const search = async () => {
-        if (!productTerm.trim() || productTerm.trim() === term) return;
+        productTerm = productTerm.trim();
+        if (!productTerm || productTerm === term) return;
         if (firstTime) firstTime = false;
         
         products = [];
-        term = productTerm.trim();
+        term = productTerm;
         loading = true;
         disableInput = true;
 
@@ -28,13 +29,13 @@
             : await searchByProduct(term);
 
         if (response.status !== 200) console.error("Something went wrong with fetching data!");
-        else if (response.size) extractData(response.list);
+        else if (response.size) products = extractData(response.list);
         loading = false;
         disableInput = false;
     }
 
-    const extractData = (data: any[]) => {
-        data.forEach(p => {
+    const extractData = (data: any[]): FoodProduct[] => {
+        return data.map(p => {
             const _quantity: string | undefined =
                 p.quantity && /([\d]+)/.test(p.quantity)
                 ? p.quantity.match(/([\d]+)/)[0]
@@ -45,7 +46,7 @@
                 ? p.brands.join(", ")
                 : p.brands;
 
-            products.push({
+            return {
                 code: p._id || p.code,
                 image: p.image_front_url,
                 name: p.name || p.product_name,
@@ -64,7 +65,7 @@
                 salt: p.nutrient_levels?.salt,
                 saturated: p.nutrient_levels?.saturated,
                 sugars: p.nutrient_levels?.sugars,
-            });
+            };
         });
     }
 
@@ -77,7 +78,7 @@
 <section id="search">
     <header>
         <h1>Search food products with this generic search website.</h1>
-        <h2>Huge thanks to <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener noreferrer">OpenFoodFacts</a> for their API</h2>
+        <h2>Huge thanks to <a href="https://world.openfoodfacts.org/" target="_blank" rel="noreferrer">OpenFoodFacts</a> for their API</h2>
     </header>
     <div id="search-box">
         <ProductSearch bind:productTerm bind:disableInput/>

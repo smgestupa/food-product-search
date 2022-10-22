@@ -16,7 +16,7 @@
             <header>
                 <a href="https://world.openfoodfacts.org/product/{ product.code }"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noreferrer">
                     { product.name }
                 </a>
                 <h2>
@@ -35,7 +35,7 @@
         </div>
     </summary>
     <section>
-        <div class="product-characteristics">
+        <div id="product-characteristics">
             <header>
                 <h1>Product Characteristics</h1>
             </header>
@@ -100,7 +100,7 @@
                     { #if product.link }
                         <a href={ product.link } 
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noreferrer">
                             { product.link }
                         </a>
                     { :else }
@@ -134,7 +134,7 @@
                 </li>
             </ul>
         </div>
-        <div class="product-ingredients">
+        <div id="product-ingredients">
             <header>
                 <h1>Ingredients</h1>
                 <h2>Ingredients are listed in order of importance</h2>
@@ -164,12 +164,12 @@
                 </li>
             </ul>
         </div>
-        <div class="nutrition-facts">
+        <div id="nutrition-facts">
             <header>
                 <h1>Nutrition Facts</h1>
             </header>
             <ul>
-                <li class="nutriscore">
+                <li id="nutriscore">
                     <span>NutriScore color nutrition grade</span>
                     <section>
                         <span class:score={ product.grade === "a" }>A</span>
@@ -179,7 +179,7 @@
                         <span class:score={ product.grade === "e" }>E</span>
                     </section>
                 </li>
-                <li class="nutrient-levels">
+                <li id="nutrient-levels">
                     <span>Nutrient levels for 100g</span>
                     <section>
                         <p 
@@ -300,6 +300,7 @@
             margin-top: 9px;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, auto));
+            column-gap: 10px;
             max-width: 720px;
             height: fit-content;
             padding: 5px;
@@ -341,7 +342,7 @@
         }
     }
 
-    .product-characteristics {
+    #product-characteristics {
         & > header > h1 {
             font-size: 1.125rem; /* 18px */
             line-height: 1.75rem; /* 28px */
@@ -392,7 +393,7 @@
         }
     }
 
-    .product-ingredients {
+    #product-ingredients {
         & > header > h1 {
             font-size: 1.125rem; /* 18px */
             line-height: 1.75rem; /* 28px */
@@ -434,7 +435,7 @@
         }
     }
 
-    .nutrition-facts {
+    #nutrition-facts {
         margin-top: 24px;
 
         & > header > h1 {
@@ -465,7 +466,7 @@
         }
     }
 
-    .nutriscore {
+    #nutriscore {
         & > section {
             display: flex;
             align-items: center;
@@ -515,7 +516,7 @@
         }
     }
 
-    .nutrient-levels {
+    #nutrient-levels {
         & > section {
             margin-top: 16px;
 
