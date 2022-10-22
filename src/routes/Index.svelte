@@ -29,13 +29,13 @@
             : await searchByProduct(term);
 
         if (response.status !== 200) console.error("Something went wrong with fetching data!");
-        else if (response.size) extractData(response.list);
+        else if (response.size) products = extractData(response.list);
         loading = false;
         disableInput = false;
     }
 
-    const extractData = (data: any[]) => {
-        data.forEach(p => {
+    const extractData = (data: any[]): FoodProduct[] => {
+        return data.map(p => {
             const _quantity: string | undefined =
                 p.quantity && /([\d]+)/.test(p.quantity)
                 ? p.quantity.match(/([\d]+)/)[0]
@@ -46,7 +46,7 @@
                 ? p.brands.join(", ")
                 : p.brands;
 
-            products.push({
+            return {
                 code: p._id || p.code,
                 image: p.image_front_url,
                 name: p.name || p.product_name,
@@ -65,7 +65,7 @@
                 salt: p.nutrient_levels?.salt,
                 saturated: p.nutrient_levels?.saturated,
                 sugars: p.nutrient_levels?.sugars,
-            });
+            };
         });
     }
 
